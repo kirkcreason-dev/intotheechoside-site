@@ -5,11 +5,11 @@ the upcoming Echoside Judge referee app.
 
 ## Deploy to GitHub Pages
 
-1. Create a repo (e.g. `echoside-site`), push these files:
+1. Create a repo (e.g. `intotheechoside-site`), push these files:
 
        git init && git add -A && git commit -m "Into the Echoside site"
        git branch -M main
-       git remote add origin https://github.com/YOURUSER/echoside-site.git
+       git remote add origin https://github.com/kirkcreason-dev/intotheechoside-site.git
        git push -u origin main
 
 2. Repo → Settings → Pages → Source: "Deploy from a branch" → `main` / root.
@@ -21,7 +21,7 @@ the upcoming Echoside Judge referee app.
 
 | Type  | Host | Value                     |
 |-------|------|---------------------------|
-| CNAME | www  | YOURUSER.github.io        |
+| CNAME | www  | kirkcreason-dev.github.io        |
 | A     | @    | 185.199.108.153           |
 | A     | @    | 185.199.109.153           |
 | A     | @    | 185.199.110.153           |
@@ -29,7 +29,7 @@ the upcoming Echoside Judge referee app.
 
 The A records make the bare domain `intotheechoside.com` redirect to `www`.
 
-## Assets needed from you (drop into /assets)
+## Assets (delivered and in place)
 
 - `hero.jpg` — box/key art for the framed slot in the Re-Release section (Tom Wood art; ~1440px wide)
 - `app-screenshot.png` — phone screenshot of the app (portrait)
