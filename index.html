@@ -87,6 +87,7 @@ nav .links a{color:var(--dim)} nav .links a:hover{color:var(--gold)}
 .badge{display:inline-block;background:#000;border:1.5px solid var(--goldD);border-radius:12px;padding:10px 22px;color:#fff;text-align:left;box-shadow:0 6px 24px #000a}
 .badge small{display:block;font-size:10px;color:#aaa;letter-spacing:.5px}
 .badge b{font-size:16px}
+.badgeImg{height:54px;display:block;border-radius:12px;border:1.5px solid var(--goldD);box-shadow:0 6px 24px #000a}
 .soonTag{position:absolute;top:-11px;right:-10px;background:var(--gold);color:#241c00;font-size:10px;font-weight:800;border-radius:8px;padding:2px 9px;letter-spacing:1px;transform:rotate(4deg);box-shadow:0 2px 8px #000a}
 /* dripping edge below hero */
 .drips{display:block;width:100%;height:38px;margin-top:-1px}
@@ -229,10 +230,12 @@ footer .links{margin-bottom:14px;display:flex;gap:22px;justify-content:center;fl
 
     <div class="btnRow">
       <span class="badgeWrap"><span class="soonTag">COMING SOON</span>
-        <span class="badge"><small>Download on the</small><b>App Store</b></span>
+        <img class="badgeImg" src="assets/badge-appstore.png" alt="Download on the App Store — coming soon"
+          onerror="this.outerHTML='<span class=&quot;badge&quot;><small>Download on the</small><b>App Store</b></span>'">
       </span>
       <span class="badgeWrap"><span class="soonTag">COMING SOON</span>
-        <span class="badge"><small>Get it on</small><b>Google Play</b></span>
+        <img class="badgeImg" src="assets/badge-googleplay.png" alt="Get it on Google Play — coming soon"
+          onerror="this.outerHTML='<span class=&quot;badge&quot;><small>Get it on</small><b>Google Play</b></span>'">
       </span>
     </div>
   </div>
