@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Into the Echoside — The Official Deckbuilding Game | Re-Release & Mobile App</title>
+<meta name="description" content="Into the Echoside, the official Psychopathic Records deckbuilding game, is being re-released — and it's coming to the App Store and Google Play. Plus: the Echoside Judge referee app, coming soon.">
+<meta property="og:title" content="Into the Echoside — The Dark Carnival Opens Its Gates Again">
+<meta property="og:description" content="The official deckbuilding game returns: re-release + mobile app on the App Store and Google Play. Whoop whoop!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.intotheechoside.com">
+<meta property="og:image" content="https://www.intotheechoside.com/assets/og-image.jpg">
+<meta name="theme-color" content="#0d0a14">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Creepster&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0a14; --bg2:#151020; --panel:#1e1733; --panel2:#2a2046;
+  --ink:#efeaff; --dim:#a297c7; --line:#3c2f66;
+  --purple:#8b3dff; --green:#3aff8c; --red:#c81230; --redD:#7c0a1e; --gold:#f5c542; --goldD:#a87c17;
+  --dc:#c13dff; --psy:#ff3d5e; --ug:#3aa0ff; --epic:#ff8c3a; --fiend:#7dff3d; --tarot:#e8b23d; --jug:#c9c9c9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{line-height:1.12}
+.carny{font-family:'Rye',Georgia,serif;font-weight:400}
+.creep{font-family:'Creepster',Georgia,cursive;font-weight:400;letter-spacing:2px}
+a{color:var(--green);text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:78px 0;position:relative}
+.center{text-align:center}
+/* ---------- big top awning ---------- */
+.awning{height:26px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,#20101c 44px 88px);border-bottom:2px solid var(--goldD)}
+.scallops{height:15px;margin-top:-1px;background:
+ radial-gradient(circle at 22px -6px,var(--red) 0 17px,transparent 18px) 0 0/88px 22px repeat-x,
+ radial-gradient(circle at 22px -6px,#20101c 0 17px,transparent 18px) 44px 0/88px 22px repeat-x}
+/* ---------- nav (carnival sign) ---------- */
+nav{position:sticky;top:0;z-index:60;background:rgba(13,10,20,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--goldD);box-shadow:0 4px 24px #000a}
+nav .wrap{display:flex;align-items:center;gap:22px;padding:12px 22px}
+nav .brand{font-family:'Rye',serif;font-size:19px;color:var(--gold);text-shadow:0 0 12px rgba(245,197,66,.4)}
+nav .brand span{color:var(--ink)}
+nav .links{margin-left:auto;display:flex;gap:20px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+nav .links a{color:var(--dim)} nav .links a:hover{color:var(--gold)}
+@media(max-width:680px){nav .links{display:none}}
+/* ---------- string lights ---------- */
+.lights{display:flex;justify-content:space-between;padding:0 4vw;border-top:2px solid #241a3d;max-width:1100px;margin:0 auto}
+.lights i{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px 2px rgba(245,197,66,.75);margin-top:7px;animation:flick 2.8s infinite}
+.lights i:nth-child(3n){animation-delay:.9s;margin-top:13px}
+.lights i:nth-child(3n+1){animation-delay:1.7s}
+.lights i:nth-child(4n){margin-top:10px;background:#ff8c3a;box-shadow:0 0 12px 2px rgba(255,140,58,.7)}
+@keyframes flick{0%,100%{opacity:1}50%{opacity:.45}}
+/* ---------- hero ---------- */
+.hero{position:relative;text-align:center;padding:64px 0 0;background:
+ radial-gradient(ellipse at 50% -10%,#31205e 0%,transparent 55%),
+ radial-gradient(ellipse at 12% 100%,#3d0f22 0%,transparent 45%),
+ radial-gradient(ellipse at 88% 100%,#0f2436 0%,transparent 45%),var(--bg)}
+.hero .tent{position:absolute;inset:auto 0 0 0;margin:0 auto;width:min(1200px,140vw);opacity:.16;pointer-events:none}
+.hero .l1{font-size:clamp(14px,2.2vw,19px);letter-spacing:10px;color:var(--dim);text-transform:uppercase}
+.hero .l2{font-family:'Rye',serif;font-size:clamp(46px,9.5vw,104px);color:var(--gold);
+ text-shadow:0 2px 0 var(--goldD),0 5px 0 #52380a,0 0 55px rgba(245,197,66,.35);margin:6px 0 2px}
+.hero .l3{font-size:clamp(11px,1.8vw,14px);letter-spacing:5px;color:var(--dim);text-transform:uppercase}
+.rings{display:flex;justify-content:center;margin:18px 0 8px}
+.rings svg{width:110px;height:40px;stroke:var(--gold);fill:none;stroke-width:2.5;filter:drop-shadow(0 0 6px rgba(245,197,66,.5))}
+.hero h1{font-family:Georgia,serif;font-size:clamp(24px,4.2vw,40px);margin:14px auto 14px;max-width:840px;position:relative;z-index:2}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p.sub{color:var(--dim);max-width:660px;margin:0 auto 30px;font-size:17px;position:relative;z-index:2}
+/* fanned game cards */
+.fan{position:relative;height:250px;margin:26px auto 8px;z-index:2;max-width:700px}
+.gcard{position:absolute;left:50%;bottom:0;width:148px;height:206px;border-radius:12px;border:1px solid #000c;
+ background:var(--panel);box-shadow:0 14px 40px #000c, inset 0 0 0 2px #0006;transform-origin:50% 115%;overflow:hidden}
+.gcard .art{height:58%;display:flex;align-items:center;justify-content:center;font-size:44px;
+ background:radial-gradient(circle at 50% 30%,var(--cc) 0%,#12101d 92%)}
+.gcard .cost{position:absolute;top:5px;left:5px;background:#000d;border:1.5px solid var(--gold);color:var(--gold);font-weight:800;font-size:13px;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gcard .gp{position:absolute;top:6px;right:6px;background:#000d;color:var(--green);font-weight:700;font-size:10px;padding:2px 5px;border-radius:6px}
+.gcard .nm{font-family:Georgia,serif;font-weight:700;font-size:12px;padding:6px 8px 0;line-height:1.1}
+.gcard .ty{font-size:9px;padding:2px 8px;text-transform:uppercase;letter-spacing:1px;color:var(--cc)}
+.gcard .ic2{position:absolute;bottom:4px;right:7px;font-size:12px;text-shadow:0 0 4px #000}
+@media(max-width:560px){.fan{height:200px}.gcard{width:118px;height:166px}.gcard .art{font-size:34px}.gcard .nm{font-size:10px}}
+/* store badges */
+.btnRow{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;padding-bottom:56px}
+.badgeWrap{position:relative;display:inline-block}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;border:1.5px solid var(--goldD);border-radius:12px;padding:10px 20px;color:#fff;text-align:left;box-shadow:0 6px 24px #000a}
+.badge .ic{font-size:26px}
+.badge small{display:block;font-size:10px;color:#aaa;letter-spacing:.5px}
+.badge b{font-size:16px}
+.soonTag{position:absolute;top:-11px;right:-10px;background:var(--gold);color:#241c00;font-size:10px;font-weight:800;border-radius:8px;padding:2px 9px;letter-spacing:1px;transform:rotate(4deg);box-shadow:0 2px 8px #000a}
+/* dripping edge below hero */
+.drips{display:block;width:100%;height:38px;margin-top:-1px}
+/* ---------- ticket kicker ---------- */
+.ticket{display:inline-block;position:relative;background:var(--red);color:#ffe9b0;font-family:'Rye',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+ padding:7px 26px;border-radius:4px;border:1.5px dashed rgba(255,233,176,.55);box-shadow:0 4px 16px rgba(200,18,48,.35);margin-bottom:18px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+.ticket::before{left:-8px}.ticket::after{right:-8px}
+.ticket.gold{background:linear-gradient(135deg,#8a6412,#5c420a);color:#ffe9b0;box-shadow:0 4px 16px rgba(245,197,66,.3)}
+.ticket.green{background:#0d5c33;box-shadow:0 4px 16px rgba(58,255,140,.25)}
+.ticket.blue{background:#12365c;box-shadow:0 4px 16px rgba(77,125,255,.3)}
+/* ---------- section headers ---------- */
+h2.sect{font-family:'Rye',serif;font-size:clamp(26px,4vw,38px);color:var(--gold);text-shadow:0 2px 0 #52380a;margin-bottom:12px}
+.ornate{display:flex;align-items:center;gap:14px;justify-content:center;margin:6px 0 14px;color:var(--goldD)}
+.ornate::before,.ornate::after{content:"";height:1.5px;width:min(140px,20vw);background:linear-gradient(90deg,transparent,var(--goldD))}
+.ornate::after{background:linear-gradient(90deg,var(--goldD),transparent)}
+p.lead{color:var(--dim);max-width:700px;font-size:17px;margin-bottom:38px}
+.center p.lead{margin-left:auto;margin-right:auto}
+/* ---------- freak-show poster cards ---------- */
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.poster{background:linear-gradient(180deg,var(--panel),#171128);border:1.5px solid var(--goldD);border-radius:6px;padding:30px 26px;position:relative;
+ box-shadow:0 10px 34px #000a, inset 0 0 0 5px var(--bg), inset 0 0 0 6.5px var(--goldD)}
+.poster .ic{font-size:38px;margin-bottom:10px;filter:drop-shadow(0 0 10px rgba(245,197,66,.3))}
+.poster h3{font-family:'Rye',serif;font-size:18px;color:var(--gold);margin-bottom:10px;letter-spacing:.5px}
+.poster p{color:var(--dim);font-size:14.5px}
+.poster .corner{position:absolute;font-size:11px;color:var(--goldD)}
+.poster .corner.tl{top:10px;left:12px}.poster .corner.tr{top:10px;right:12px}
+.poster .corner.bl{bottom:10px;left:12px}.poster .corner.br{bottom:10px;right:12px}
+/* ---------- split ---------- */
+.split{display:grid;gap:44px;grid-template-columns:1.1fr .9fr;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.phone{border:2px solid var(--goldD);border-radius:32px;background:linear-gradient(160deg,#1e1733,#0d0a14);padding:18px;box-shadow:0 24px 70px #000c, inset 0 0 0 4px var(--bg), inset 0 0 40px #000;min-height:240px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:13px;text-align:center;position:relative}
+.phone::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:5px;border-radius:3px;background:#0008}
+ul.ticks{list-style:none;margin:18px 0}
+ul.ticks li{padding:8px 0 8px 34px;position:relative;color:var(--dim);font-size:15.5px}
+ul.ticks li::before{content:"⛧";position:absolute;left:4px;color:var(--gold);text-shadow:0 0 8px rgba(245,197,66,.5)}
+ul.ticks li b{color:var(--ink)}
+.dark{background:
+ repeating-linear-gradient(90deg,transparent 0 86px, rgba(200,18,48,.05) 86px 172px),
+ linear-gradient(180deg,var(--bg2),#120d1d);border-top:1.5px solid var(--goldD);border-bottom:1.5px solid var(--goldD)}
+/* ---------- wheel of fate ---------- */
+.wheelBox{display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.wheel{width:190px;height:190px;border-radius:50%;border:5px solid var(--gold);position:relative;flex:0 0 auto;
+ background:conic-gradient(var(--panel2) 0 30deg,#181128 30deg 60deg,var(--panel2) 60deg 90deg,#181128 90deg 120deg,var(--panel2) 120deg 150deg,#181128 150deg 180deg,var(--panel2) 180deg 210deg,#181128 210deg 240deg,var(--panel2) 240deg 270deg,#181128 270deg 300deg,var(--panel2) 300deg 330deg,#181128 330deg 360deg);
+ box-shadow:0 0 44px rgba(245,197,66,.28), inset 0 0 30px #000;animation:slowspin 40s linear infinite}
+.wheel::after{content:"🎡";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px;animation:slowspin 40s linear infinite reverse}
+@keyframes slowspin{to{transform:rotate(360deg)}}
+.d12{font-family:Georgia,serif}
+/* ---------- judge tent ---------- */
+.judgeTent{border:2px solid #2a4a75;border-radius:8px;padding:46px 40px;position:relative;overflow:hidden;
+ background:repeating-linear-gradient(90deg,rgba(18,54,92,.25) 0 60px,transparent 60px 120px),linear-gradient(160deg,#101b2e,#0c0a16);
+ box-shadow:0 14px 44px #000b, inset 0 0 0 6px var(--bg), inset 0 0 0 8px #2a4a75}
+.judgeTent::after{content:"⚖️";position:absolute;font-size:230px;right:-34px;bottom:-64px;opacity:.06}
+.judgeTent h2.sect{color:#9cc4ff;text-shadow:0 2px 0 #12365c}
+/* ---------- marquee signup ---------- */
+.signup{position:relative;background:linear-gradient(135deg,#2b1a55,#160f2c);border:2px solid var(--gold);border-radius:10px;padding:48px 34px;text-align:center;
+ box-shadow:0 0 60px rgba(139,61,255,.25), inset 0 0 0 6px var(--bg), inset 0 0 0 8px var(--goldD)}
+.signup .bulbs{position:absolute;inset:10px;pointer-events:none;border-radius:6px;
+ background-image:radial-gradient(circle,var(--gold) 2.4px,transparent 3px);background-size:26px 26px;background-repeat:repeat-x;
+ background-position:0 0, 0 100%;height:auto}
+.signup .bulbs.b{background-position:0 100%}
+.signup input{font:inherit;font-size:16px;padding:14px 18px;border-radius:8px;border:1.5px solid var(--goldD);background:var(--bg);color:var(--ink);width:min(340px,100%)}
+.signup .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px;position:relative;z-index:2}
+.btn{display:inline-block;padding:14px 30px;border-radius:8px;font-weight:800;font-size:15px;letter-spacing:1px;border:1.5px solid var(--goldD);background:linear-gradient(180deg,#8a6412,#5c420a);color:#ffe9b0;cursor:pointer;font-family:'Rye',serif;text-transform:uppercase;transition:transform .1s;box-shadow:0 6px 22px rgba(245,197,66,.25)}
+.btn:hover{transform:translateY(-2px)}
+.btn.purple{background:linear-gradient(180deg,#6a24d8,#42197a);border-color:#9c5cff;color:#efeaff;box-shadow:0 6px 26px rgba(139,61,255,.4)}
+/* ---------- footer ---------- */
+footer{padding:0 0 60px;color:var(--dim);font-size:12.5px;text-align:center}
+footer .booth{border-top:2px solid var(--goldD);background:repeating-linear-gradient(90deg,var(--redD) 0 44px,#1c0d18 44px 88px);height:16px;margin-bottom:34px}
+footer .links{margin-bottom:14px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-family:'Rye',serif;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.notice{font-size:11px;opacity:.7;max-width:640px;margin:10px auto 0}
+.artslot{margin:34px auto 0;max-width:760px;border-radius:8px;border:1.5px solid var(--goldD);box-shadow:0 18px 70px rgba(139,61,255,.22), inset 0 0 0 5px var(--bg), inset 0 0 0 6.5px var(--goldD);overflow:hidden;background:linear-gradient(135deg,#2b1a55,#160f2c)}
+.artslot .ph{padding:44px;color:var(--dim);font-size:13px;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="awning"></div><div class="scallops"></div>
+
+<nav><div class="wrap">
+  <div class="brand">INTO THE <span>ECHOSIDE</span></div>
+  <div class="links">
+    <a href="#rerelease">Re-Release</a>
+    <a href="#app">Mobile App</a>
+    <a href="#game">The Game</a>
+    <a href="#judge">Judge App</a>
+    <a href="#updates">Updates</a>
+  </div>
+</div></nav>
+
+<div class="lights">
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <svg class="tent" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M600 20 L1140 420 H60 Z" fill="#8b3dff"/>
+    <path d="M600 20 L780 420 H420 Z" fill="#0d0a14" opacity=".55"/>
+    <path d="M600 20 L920 420 H840 L600 60 L360 420 H280 Z" fill="#f5c542" opacity=".5"/>
+    <path d="M600 20 V-14 L664 0 L600 12" fill="#c81230"/>
+  </svg>
+  <div class="wrap">
+    <div class="l1">Into the</div>
+    <div class="l2">ECHOSIDE</div>
+    <div class="l3">The Official Deckbuilding Game</div>
+    <div class="rings"><svg viewBox="0 0 120 48" aria-hidden="true"><circle cx="38" cy="24" r="16"/><circle cx="60" cy="24" r="16"/><circle cx="82" cy="24" r="16"/></svg></div>
+    <div class="ticket">Step right up · Official announcement</div>
+    <h1>The Dark Carnival is opening its gates again.<br><em>Into the Echoside is being re-released</em> — and it's going digital.</h1>
+    <p class="sub">The legendary Psychopathic Records deckbuilding game returns to the table — and for the first time ever, to your phone. Battle ninjas everywhere with full online multiplayer, coming to the App Store and Google Play.</p>
+
+    <div class="fan" aria-hidden="true">
+      <div class="gcard" style="--cc:var(--fiend);transform:translateX(-50%) rotate(-22deg) translateY(26px)">
+        <div class="art"><span>👹</span></div><div class="cost">2</div>
+        <div class="nm">Drainer Road Monks</div><div class="ty">Fiend</div><div class="ic2">🥾</div>
+      </div>
+      <div class="gcard" style="--cc:var(--psy);transform:translateX(-50%) rotate(-11deg) translateY(8px)">
+        <div class="art"><span>💀</span></div><div class="cost">4</div><div class="gp">1GP</div>
+        <div class="nm">K.G. Kevin Gill</div><div class="ty">Psychopathic</div>
+      </div>
+      <div class="gcard" style="--cc:var(--epic);transform:translateX(-50%) rotate(0deg)">
+        <div class="art"><span>🌟</span></div><div class="cost">9</div><div class="gp">4GP</div>
+        <div class="nm">The Great Milenko</div><div class="ty">Epic</div><div class="ic2">🛡</div>
+      </div>
+      <div class="gcard" style="--cc:var(--tarot);transform:translateX(-50%) rotate(11deg) translateY(8px)">
+        <div class="art"><span>🔮</span></div>
+        <div class="nm">Ace of Cups</div><div class="ty">Tarot · Global</div>
+      </div>
+      <div class="gcard" style="--cc:var(--jug);transform:translateX(-50%) rotate(22deg) translateY(26px)">
+        <div class="art"><span>🤡</span></div><div class="cost">3</div><div class="gp">1GP</div>
+        <div class="nm">Juggalo</div><div class="ty">Always for sale</div>
+      </div>
+    </div>
+
+    <div class="btnRow">
+      <span class="badgeWrap"><span class="soonTag">COMING SOON</span>
+        <span class="badge"><span class="ic"></span><span><small>Download on the</small><b>App Store</b></span></span>
+      </span>
+      <span class="badgeWrap"><span class="soonTag">COMING SOON</span>
+        <span class="badge"><span class="ic">▶</span><span><small>Get it on</small><b>Google Play</b></span></span>
+      </span>
+    </div>
+  </div>
+  <svg class="drips" viewBox="0 0 1200 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill="#20101c" d="M0 0 H1200 V6 q-14 0 -14 12 q0 14 -10 14 q-9 0 -9 -16 Q1167 6 1150 6 H1090 q-12 0 -12 18 q0 14 -9 14 q-10 0 -10 -20 q0 -12 -14 -12 H960 q-16 0 -16 10 q0 22 -11 22 q-10 0 -10 -24 q0 -8 -12 -8 H820 q-13 0 -13 14 q0 16 -10 16 q-11 0 -11 -18 q0 -12 -15 -12 H660 q-14 0 -14 20 q0 12 -9 12 q-10 0 -10 -18 q0 -14 -16 -14 H520 q-12 0 -12 10 q0 20 -11 20 q-10 0 -10 -22 q0 -8 -13 -8 H380 q-15 0 -15 16 q0 14 -10 14 q-9 0 -9 -18 q0 -12 -13 -12 H240 q-12 0 -12 12 q0 18 -10 18 q-11 0 -11 -20 q0 -10 -13 -10 H100 q-14 0 -14 14 q0 12 -9 12 q-10 0 -10 -16 Q67 6 50 6 H0 Z"/>
+  </svg>
+</header>
+
+<!-- ============ RE-RELEASE ============ -->
+<section id="rerelease"><div class="wrap">
+  <div class="center">
+    <div class="ticket gold">Admit one · The return</div>
+    <h2 class="sect">Back From the Nethervoid</h2>
+    <div class="ornate">⛧ ⛧ ⛧</div>
+    <p class="lead">Sold out for years and hunted by collectors ever since, Into the Echoside is officially coming back. Designed by Jumpsteady and Louis Simpson with artwork by the legendary Tom Wood — the full experience returns.</p>
+  </div>
+  <div class="grid g3">
+    <div class="poster"><span class="corner tl">⛧</span><span class="corner tr">⛧</span><span class="corner bl">⛧</span><span class="corner br">⛧</span>
+      <div class="ic">📦</div><h3>The Game, Re-Released</h3><p>The complete deckbuilding game is returning — build your deck from the Gallery, pool your Karma, stomp your opponents, and race for Gathering Points across the Dark Carnival, Psychopathic, and Underground crews.</p></div>
+    <div class="poster"><span class="corner tl">⛧</span><span class="corner tr">⛧</span><span class="corner bl">⛧</span><span class="corner br">⛧</span>
+      <div class="ic">🔮</div><h3>Oracle of the Three Rings</h3><p>The 2018 expansion rides with it: 120 cards, Tarot cards with game-pausing global effects, secret Gambit abilities, and Fast &amp; Mirror effects that let you attack on your opponent's turn.</p></div>
+    <div class="poster"><span class="corner tl">⛧</span><span class="corner tr">⛧</span><span class="corner bl">⛧</span><span class="corner br">⛧</span>
+      <div class="ic">🎨</div><h3>New Characters, Art &amp; Cards</h3><p>The carnival grows. Brand-new official characters, new artwork, and new cards are on their way. Stay tuned, ninjas — announcements coming soon.</p></div>
+  </div>
+  <div class="artslot">
+    <img src="assets/hero.jpg" alt="Into the Echoside box art" onerror="this.remove()">
+    <div class="ph">[ box art slot — assets/hero.jpg ]</div>
+  </div>
+</div></section>
+
+<!-- ============ MOBILE APP ============ -->
+<section id="app" class="dark"><div class="wrap">
+  <div class="split">
+    <div>
+      <div class="ticket green">Coming to app stores</div>
+      <h2 class="sect">The Echoside, In Your Pocket</h2>
+      <p class="lead" style="margin-bottom:10px">The official digital edition brings the entire game to iOS and Android:</p>
+      <ul class="ticks">
+        <li><b>The complete game</b> — every rule, every card type: Karma, the Gallery, Epics, Juggalos, Flavor cards, Fiends, stomps, shields, the Wheel of Fate, and Gathering Point scoring.</li>
+        <li><b>Oracle of the Three Rings built in</b> — Tarot reveals, the pre-game Gambit draft, and Fast &amp; Mirror plays on your opponent's turn.</li>
+        <li><b>Online multiplayer</b> — quick match and private rooms with friend codes, powered by Echoside Premium.</li>
+        <li><b>Play solo</b> — a wicked AI opponent, unlimited free matches.</li>
+        <li><b>Learn in 5 minutes</b> — an interactive tutorial walks new ninjas through their first stomp.</li>
+        <li><b>Collection browser, achievements, match stats</b> — and more devious features on the way.</li>
+      </ul>
+      <a class="btn purple" href="#updates">Get launch updates</a>
+    </div>
+    <div class="phone">
+      <img src="assets/app-screenshot.png" alt="Into the Echoside app screenshot" onerror="this.remove()" style="border-radius:18px">
+      <span>[ app screenshot slot — assets/app-screenshot.png ]</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ THE GAME ============ -->
+<section id="game"><div class="wrap">
+  <div class="center">
+    <div class="ticket">For fresh ninjas</div>
+    <h2 class="sect">What Is Into the Echoside?</h2>
+    <div class="ornate">⛧ ⛧ ⛧</div>
+    <p class="lead">A fast, vicious deckbuilding card game for 2–4 players, straight from the Dark Carnival. Games run under an hour. Easy to learn, wicked to master.</p>
+  </div>
+  <div class="grid g3">
+    <div class="poster"><span class="corner tl">☯</span><span class="corner tr">☯</span><span class="corner bl">☯</span><span class="corner br">☯</span>
+      <div class="ic">☯</div><h3>Build &amp; Burn Karma</h3><p>Every ninja starts with the same scrub deck. Play cards to pool Karma, then spend it in the Gallery on artists, Items, and Fiends from three crews. Your purchases shuffle back in — your deck becomes a weapon.</p></div>
+    <div class="poster"><span class="corner tl">🥾</span><span class="corner tr">🥾</span><span class="corner bl">🥾</span><span class="corner br">🥾</span>
+      <div class="ic">🥾</div><h3>Stomp Your Homies</h3><p>This isn't solitaire. Stomp opponents' cards as they play them, sic Fiends on their Items, deny their combos — and with the expansion, bitch-slap and mirror them on their own turn.</p></div>
+    <div class="poster"><span class="corner tl">🌟</span><span class="corner tr">🌟</span><span class="corner bl">🌟</span><span class="corner br">🌟</span>
+      <div class="ic">🌟</div><h3>Race for Epics</h3><p>Epic cards are worth the most Gathering Points, and when the last one is drawn, the carnival closes. Most GP wins — tiebreaker per the official rulebook: "give me my money, bitch."</p></div>
+  </div>
+  <div class="wheelBox">
+    <div class="wheel" role="img" aria-label="Wheel of Fate"></div>
+    <div style="max-width:420px">
+      <h3 class="carny" style="color:var(--gold);font-size:20px;margin-bottom:8px">Spin the Wheel of Fate</h3>
+      <p style="color:var(--dim);font-size:15px">Some cards send you to the wheel — twelve fortunes on a d12, from fresh draws and free Juggalos to absolutely nothing at all. The carnival gives, and the carnival takes.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ JUDGE APP ============ -->
+<section id="judge"><div class="wrap">
+  <div class="judgeTent">
+    <div class="ticket blue">Also coming soon</div>
+    <h2 class="sect">Echoside Judge — The Official Referee App</h2>
+    <p class="lead" style="margin-bottom:22px">Settle it like civilized juggalos. Echoside Judge is a companion referee app for tournaments, game nights, and rules beefs — think TCG Referee, but for the Echoside.</p>
+    <div class="grid g3">
+      <div class="poster"><div class="ic">⚖️</div><h3>Instant Rulings</h3><p>Look up any card and get the official text, timing rules, and interaction rulings — stomps, shields, Fast effect windows, Tarot resolution order, all of it.</p></div>
+      <div class="poster"><div class="ic">⏱️</div><h3>Match Tools</h3><p>Turn timers, Karma tracking for tabletop play, first-player rolls, a Wheel of Fate roller, and round-by-round match logging.</p></div>
+      <div class="poster"><div class="ic">🏆</div><h3>Tournament Mode</h3><p>Run brackets and swiss rounds, record results, handle disputes with a built-in penalty guide — made for DCG Con-style organized play.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ UPDATES ============ -->
+<section id="updates"><div class="wrap">
+  <div class="signup">
+    <div class="bulbs" aria-hidden="true"></div>
+    <h2 class="sect">Don't Miss the Drop</h2>
+    <p class="lead" style="margin-bottom:6px">Launch dates, card previews, and beta invites — straight from the carnival.</p>
+    <form class="row" action="#" onsubmit="event.preventDefault();this.innerHTML='<b style=&quot;color:var(--green);font-size:17px&quot;>You&#39;re on the list, ninja. Whoop whoop! 🪓</b>';">
+      <input type="email" required placeholder="your@email.com" aria-label="Email address">
+      <button class="btn" type="submit">Notify Me</button>
+    </form>
+    <p class="notice">Sign-ups are stored when the mailing-list backend is connected — see README for wiring this to Mailchimp/Buttondown.</p>
+  </div>
+</div></section>
+
+<footer>
+  <div class="booth"></div>
+  <div class="wrap">
+    <div class="links">
+      <a href="#rerelease">Re-Release</a>
+      <a href="#app">Mobile App</a>
+      <a href="#judge">Judge App</a>
+      <a href="https://www.dcgcon.com" rel="noopener">DCG Con</a>
+    </div>
+    <div>Into the Echoside ™ &amp; © Psychopathic Records / Dark Carnival Games LLC. All rights reserved.</div>
+    <div class="notice">Designed by Jumpsteady &amp; Louis Simpson · Artwork by Tom Wood · Digital edition and this site produced under license.</div>
+  </div>
+</footer>
+
+</body>
+</html>
